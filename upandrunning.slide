@@ -1,0 +1,173 @@
+Go: Up and Running
+Moz Lunch and Learn
+25 Nov 2015
+Tags: intro
+
+David Pierce
+Software Engineer, Moz
+david.pierce@moz.com
+http://www.thedahv.com
+@TheDahv
+
+* What is Go?
+
+_Go_is_an_open_source_project_developed_by_a_team_at_Google_and_many_
+_contributors_from_the_open_source_community._
+
+(Some) Language features at a glance:
+
+- Small and simple
+- Strongly typed
+- Composition via structs and interfaces
+- First-class concurrency primitives (goroutines and channels)
+- Functions as values
+
+* Go Environment Features
+
+- _Very_ fast compiler
+- _Very_thoughtful_ and complete standard library
+- Opinionated conventions (`$GOPATH` workspace, `gofmt`, `govet`, etc)
+- Static binaries and awesome deployments (includes Go runtime)
+- Cross-compilation to Darwin, Linux, and Windows (ARMx, BSD experimental)
+- Tools for everything: (`go`run`, `go`test`, `goimports`, `golang.org/x/tools/present`)
+
+* Why Go?
+
+_We_pushed_Node_too_far..._
+
+*Local*Insights*Requirements*
+
+- Storage and retrieval over massive event-based data storage
+- Storage and retrieval of same-day data
+- Model our design after [[http://lambda-architecture.net/][Lambda Architecture]]
+- Enter [[https://github.com/jehiah/sortdb][SortDB]] for batch layer, a mmap'd sorted database written in Go
+- Our first contribution: [[https://github.com/jehiah/sortdb/pull/6][Forward and range match]]
+
+*Key*Takeaway*: strong standards and conventions, plus a simple and powerful
+language makes collaboration on high-performance software very easy.
+
+* Why Go?
+
+_...and_we_needed_to_shove_more_data_through_the_pipe_
+
+*Lambda*Architecture*Merge*Step*
+
+The problem: Multiplex a single query for time series data across _n_ locations,
+and stream, merge, and dedupe their responses into a single HTTP response.
+
+- We found performance bottlenecks in Node's HTTP stack for that many requests
+- This kind of problem lends itself to async, but also to concurrent programming
+- Very important to avoid excessive memory allocation
+
+[[https://github.com/seomoz/shinkansen][Shinkansen]] multiplexes queries across
+SortDB and Redis to serve Moz Local Insights analytics data.
+
+* Getting Started - Installation & Setup
+
+- [[Download][https://golang.org/dl/]] and [[Install][https://golang.org/doc/install]]
+- Create a "Go workspace"
+  mkdir ~/Development/go
+- Set up $GOPATH
+  export GOPATH=~/Development/go
+- Compiled projects go into `$GOPATH/bin`. Add to `$PATH`...
+
+
+* Getting Started - Tools Setup
+
+For Vimmers...
+
+- [[https://github.com/fatih/vim-go][vim-go]]
+- Handy bindings:
+  " Like gofmt with automatic imports management
+  let g:go_fmt_command = "goimports"
+
+  " Run Linter on save
+  au BufWritePost *.go GoLint
+
+  " Build current package in buffer - errors in miniwindow
+  au FileType go nmap <leader>b <Plug>(go-build)
+
+  " Test current package in buffer - errors in miniwindow
+  au FileType go nmap <leader>t <Plug>(go-test)
+
+* Getting Started - Tools Setup
+
+For Atom...
+
+- [[https://atom.io/packages/go-plus][Go Plus]]
+
+* Getting Started - Tools Setup
+
+For Emacs/Sublime Text/Nano/whatever...
+
+-  ¯\_(ツ)_/¯
+
+* Getting Started - First Program
+
+- Create a project under "repo-source/organization/project-name"
+  mkdir -p $GOPATH/github.org/YOUR_HANDLE/my-new-project
+- Write some code, and then run it `go`run`yourfile.go`
+
+.play examples/hello/hello.go
+
+- Build
+  GOARCH=linux|darwin|etc go build -o whatever
+- Deploy
+  scp whatever you@yourserver:/wherever
+
+* Kidding...Our deployment looks more like this
+
+  def shinkansen_install():
+    # Install go
+    run('wget https://storage.googleapis.com/golang/go1.5.1.linux-amd64.tar.gz')
+    run('tar xvzf go1.5.1.linux-amd64.tar.gz')
+    sudo('mv go /usr/local')
+    sudo('ln -s /usr/local/go/bin/go /usr/local/bin/go')
+
+    # Install Project
+    go_path = '/home/%s/go' % env.user
+    run('mkdir -p %s' % go_path)
+    with cd(go_path):
+      run('mkdir -p src/github.com/seomoz')
+      with cd('src/github.com/seomoz'):
+        run('git clone git@github.com:seomoz/shinkansen.git')
+
+        with cd('shinkansen'):
+          run('GOPATH=%s go get' % go_path)
+          run('GOPATH=%s go build' % go_path)
+          sudo('mv shinkansen /usr/local/bin')
+
+    # Cleanup
+    run('rm -rf %s' % go_path)
+    run('rm go1.5.1.linux-amd64.tar.gz')
+    sudo('rm /usr/local/bin/go')
+    sudo('rm -rf /usr/local/go')
+
+* That's Boring...
+
+Let's build a NY Times API client:
+
+.code examples/nyt/single.go /^func RunSingle/,/^}
+
+* Network Calls in Go
+
+.code examples/nyt/common.go /^func findArticles/,/^}
+
+* And Dealing with JSON and Types
+
+.code examples/nyt/common.go /^type ArticleResponse/,/^}
+.code examples/nyt/common.go /^type Article struct/,/^}
+.code examples/nyt/common.go /^func parseResponse/,/^}
+
+* Let's Search Multiple Terms (Serial)
+
+.code examples/nyt/serial.go /^func RunSerial/,/^}
+
+* Let's Search Multiple Terms (Parallel)
+
+.code examples/nyt/parallel.go /setup start/,/setup end
+
+
+* Let's Search Multiple Terms (Parallel) continued...
+
+.code examples/nyt/parallel.go /consume start/,/consume end

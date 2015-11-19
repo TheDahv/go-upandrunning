@@ -1,0 +1,410 @@
+{
+    "copyright": "Copyright (c) 2013 The New York Times Company.  All Rights Reserved.",
+    "response": {
+        "docs": [
+            {
+                "_id": "4fc4094d45c1498b0d8c5249",
+                "abstract": null,
+                "blog": [],
+                "byline": {
+                    "original": "PHILIP BEER",
+                    "person": [
+                        {
+                            "firstname": "Philip",
+                            "lastname": "BEER",
+                            "organization": "",
+                            "rank": 1,
+                            "role": "reported"
+                        }
+                    ]
+                },
+                "document_type": "article",
+                "headline": {
+                    "kicker": "1",
+                    "main": "IN SUPPORT"
+                },
+                "keywords": [],
+                "lead_paragraph": null,
+                "multimedia": [],
+                "news_desk": null,
+                "print_page": "X3",
+                "pub_date": "1961-03-12T00:00:00Z",
+                "section_name": null,
+                "slideshow_credits": null,
+                "snippet": null,
+                "source": "The New York Times",
+                "subsection_name": null,
+                "type_of_material": "Letter",
+                "web_url": "http://query.nytimes.com/gst/abstract.html?res=9C0DE4DF123BE633A25751C1A9659C946091D6CF",
+                "word_count": 184
+            },
+            {
+                "_id": "535f13ca79881046f3c411fd",
+                "abstract": "Ghali, W: Beer in the Snooker Club",
+                "blog": [],
+                "byline": {
+                    "original": "By MARTIN LEVIN",
+                    "person": [
+                        {
+                            "firstname": "Martin",
+                            "lastname": "LEVIN",
+                            "organization": "",
+                            "rank": 1,
+                            "role": "reported"
+                        }
+                    ]
+                },
+                "document_type": "article",
+                "headline": {
+                    "main": "Futility Lurked"
+                },
+                "keywords": [
+                    {
+                        "is_major": "N",
+                        "name": "subject",
+                        "rank": "1",
+                        "value": "BOOK REVIEWS"
+                    },
+                    {
+                        "is_major": "N",
+                        "name": "creative_works",
+                        "rank": "3",
+                        "value": "BEER IN THE SNOOKER CLUB"
+                    },
+                    {
+                        "is_major": "N",
+                        "name": "persons",
+                        "rank": "2",
+                        "value": "GHALI, W"
+                    }
+                ],
+                "lead_paragraph": "Ghali, W: Beer in the Snooker Club",
+                "multimedia": [],
+                "news_desk": null,
+                "print_page": null,
+                "pub_date": "1964-06-14T00:00:00Z",
+                "section_name": null,
+                "slideshow_credits": null,
+                "snippet": "Ghali, W: Beer in the Snooker Club",
+                "source": "The New York Times",
+                "subsection_name": null,
+                "type_of_material": "Review",
+                "web_url": "http://www.nytimes.com/1964/06/14/futility-lurked.html",
+                "word_count": "353"
+            },
+            {
+                "_id": "4fd188e68eb7c8105d689519",
+                "abstract": null,
+                "blog": [],
+                "byline": null,
+                "document_type": "article",
+                "headline": {
+                    "main": "Remember Those Old-Time Beer Jingles?"
+                },
+                "keywords": [
+                    {
+                        "name": "persons",
+                        "value": "LANGER, RALPH"
+                    },
+                    {
+                        "name": "subject",
+                        "value": "BEER"
+                    }
+                ],
+                "lead_paragraph": "LEAD: To the Editor Your Aug. 16 article on the new dry beers included a passing reference to Rheingold Beer that should have stirred the memory of any New Yorker over the age of 45. My beer is Rheingold, the dry beer. Think of Rheingold whenever you buy beer. It's not bitter, not sweet; it's the dry flavored treat.",
+                "multimedia": [],
+                "news_desk": "Editorial Desk",
+                "print_page": "20",
+                "pub_date": "1989-09-11T00:00:00Z",
+                "section_name": "Opinion",
+                "slideshow_credits": null,
+                "snippet": "LEAD: To the Editor Your Aug. 16 article on the new dry beers included a passing reference to Rheingold Beer that should have stirred the memory of any New Yorker over the age of 45.  My beer is Rheingold, the dry beer.  Think of Rheingold whenever...",
+                "source": "The New York Times",
+                "subsection_name": null,
+                "type_of_material": "Letter",
+                "web_url": "http://www.nytimes.com/1989/09/11/opinion/l-remember-those-old-time-beer-jingles-351089.html",
+                "word_count": 280
+            },
+            {
+                "_id": "4fc0862645c1498b0d340b3d",
+                "abstract": "Article by C L Sibley asking if beer saved the Briton in war",
+                "blog": [],
+                "byline": {
+                    "original": "By C. LINTERN SIBLEY of Montreal",
+                    "person": [
+                        {
+                            "firstname": "C.",
+                            "lastname": "SIBLEY",
+                            "middlename": "Lintern",
+                            "organization": "",
+                            "rank": 1,
+                            "role": "reported"
+                        }
+                    ]
+                },
+                "document_type": "article",
+                "headline": {
+                    "main": "DID BEER SAVE THE BRITON?; To Us Intrenched in Prohibition, Science Says It Furnished Vitamins That Preserved Race The Beer of Old England. Canada's Self-Sacrifice. Cure for Scurvy. The Virtue of Beer. A Bare Living."
+                },
+                "keywords": [
+                    {
+                        "name": "persons",
+                        "value": "SIBLEY, C LINTERN"
+                    },
+                    {
+                        "name": "subject",
+                        "value": "BEER"
+                    }
+                ],
+                "lead_paragraph": "WE prohibitionists--for of course we are all prohibitionists now, since nobody on this continent ever tastes liquor except under protest, as a medicinal measure--we prohibitionists may not be considered so thoroughly set upon our...",
+                "multimedia": [],
+                "news_desk": null,
+                "print_page": "XXX7",
+                "pub_date": "1920-03-21T00:00:00Z",
+                "section_name": null,
+                "slideshow_credits": null,
+                "snippet": "WE prohibitionists--for of course we are all prohibitionists  now, since nobody on this continent ever tastes liquor except under protest, as a medicinal  measure--we prohibitionists may not be considered so thoroughly set upon our...",
+                "source": "The New York Times",
+                "subsection_name": null,
+                "type_of_material": "Article",
+                "web_url": "http://query.nytimes.com/gst/abstract.html?res=9E04E4DC173AEE32A25752C2A9659C946195D6CF",
+                "word_count": 2486
+            },
+            {
+                "_id": "4fd1c70e8eb7c8105d6f85e2",
+                "abstract": null,
+                "blog": [],
+                "byline": {
+                    "original": "By KIRK JOHNSON",
+                    "person": [
+                        {
+                            "firstname": "Kirk",
+                            "lastname": "JOHNSON",
+                            "organization": "",
+                            "rank": 1,
+                            "role": "reported"
+                        }
+                    ]
+                },
+                "document_type": "article",
+                "headline": {
+                    "main": "Is a Team of Clydesdales Next?; In Heady World of Microbreweries, Growth Is the Word"
+                },
+                "keywords": [
+                    {
+                        "name": "glocations",
+                        "value": "NEW YORK CITY METROPOLITAN AREA"
+                    },
+                    {
+                        "name": "organizations",
+                        "value": "NEW HAVEN BREWING CO"
+                    },
+                    {
+                        "name": "subject",
+                        "value": "BEER"
+                    }
+                ],
+                "lead_paragraph": "The New Haven Brewing Company's line of beers is about as local as it gets. Who is the guy on the label of Mr. Mike's Light Ale, grinning behind the bar with the big sloshing tankard of suds? It is Mike Gettings, the company president. The dignified face on the label of Blackwell Stout? Blackwell himself, the brew-house dog, who even contributed a paw print of approval. But the big question is, can Mr. Mike and Blackwell travel? Can a company that has reveled in its connection to the community sell its products nationally, head to head against the big players, in places where Blackwell is just another dog on a beer bottle and where nobody knows his name?",
+                "multimedia": [],
+                "news_desk": "Metropolitan Desk",
+                "print_page": "1",
+                "pub_date": "1994-10-25T00:00:00Z",
+                "section_name": "New York and Region",
+                "slideshow_credits": null,
+                "snippet": "The New Haven Brewing Company's line of beers is about as local as it gets. Who is the guy on the label of Mr. Mike's Light Ale, grinning behind the bar with the big sloshing tankard of suds? It is Mike Gettings, the company president. The dignified...",
+                "source": "The New York Times",
+                "subsection_name": null,
+                "type_of_material": "News",
+                "web_url": "http://www.nytimes.com/1994/10/25/nyregion/team-clydesdales-next-heady-world-microbreweries-growth-word.html",
+                "word_count": 1395
+            },
+            {
+                "_id": "4fd1208c8eb7c8105d5e14d8",
+                "abstract": null,
+                "blog": [],
+                "byline": null,
+                "document_type": "article",
+                "headline": {
+                    "main": "Beer in Prague"
+                },
+                "keywords": [
+                    {
+                        "name": "glocations",
+                        "value": "EUROPE"
+                    },
+                    {
+                        "name": "subject",
+                        "value": "BEER"
+                    }
+                ],
+                "lead_paragraph": "To the Editor: Henry Kamm has made a common error regarding the alcoholic content of European beer in his article ''Prague's Foamy Delights'' (Travel, March 14). The concentration of solids in unfermented beer is measured in degrees Plato or degrees Balling and is expressed on most European beer labels as oP.",
+                "multimedia": [],
+                "news_desk": "Travel Desk",
+                "print_page": "29",
+                "pub_date": "1982-04-18T00:00:00Z",
+                "section_name": "Opinion",
+                "slideshow_credits": null,
+                "snippet": "To the Editor: Henry Kamm has made a common error regarding the alcoholic content of European beer in his article ''Prague's Foamy Delights'' (Travel, March 14). The concentration of solids in unfermented beer is measured in degrees Plato or degrees...",
+                "source": "The New York Times",
+                "subsection_name": null,
+                "type_of_material": "Letter",
+                "web_url": "http://www.nytimes.com/1982/04/18/travel/l-beer-in-prague-067440.html",
+                "word_count": 154
+            },
+            {
+                "_id": "4fc0c9b245c1498b0d478c5b",
+                "abstract": "ed",
+                "blog": [],
+                "byline": null,
+                "document_type": "article",
+                "headline": {
+                    "main": "MORE THAN ONE BREW."
+                },
+                "keywords": [
+                    {
+                        "name": "subject",
+                        "value": "BEER"
+                    }
+                ],
+                "lead_paragraph": "A beer strike in Hamburg by Hitlerites and Communists provides an exhibit of old and new forces operating side by side. It used to be said before the war that the current price and quality of Munich beer determined the political mood of the Bavarian people.",
+                "multimedia": [],
+                "news_desk": null,
+                "print_page": "12",
+                "pub_date": "1932-02-13T00:00:00Z",
+                "section_name": null,
+                "slideshow_credits": null,
+                "snippet": "A beer strike in Hamburg by Hitlerites and Communists provides an exhibit of old and new forces operating side by side. It used to be said before the war that the current price and quality of Munich beer determined the political mood of the Bavarian...",
+                "source": "The New York Times",
+                "subsection_name": null,
+                "type_of_material": "Editorial",
+                "web_url": "http://query.nytimes.com/gst/abstract.html?res=9407E7D81E3FE633A25750C1A9649C946394D6CF",
+                "word_count": 443
+            },
+            {
+                "_id": "4fc0237445c1498b0d17918c",
+                "abstract": "English and German Compared by London Telegraph",
+                "blog": [],
+                "byline": {
+                    "original": "From The London Telegraph",
+                    "person": [
+                        {
+                            "organization": "",
+                            "rank": 1,
+                            "role": "reported"
+                        }
+                    ]
+                },
+                "document_type": "article",
+                "headline": {
+                    "main": "VARIETIES OF BEER.; Comparison of German and English Brews -- Effect of Tastes Upon Trade."
+                },
+                "keywords": [
+                    {
+                        "name": "subject",
+                        "value": "BEER"
+                    }
+                ],
+                "lead_paragraph": "Has the national taste changed? Do we prefer, instead of strong ales, to drink lighter beer, such as lager, and are we so unpatriotic as to select German brews when English may be had? Or have the brewers of the United Kingdom met the foreign competition and adapted themselves to the popular demand?",
+                "multimedia": [],
+                "news_desk": null,
+                "print_page": "8",
+                "pub_date": "1898-12-18T00:00:00Z",
+                "section_name": null,
+                "slideshow_credits": null,
+                "snippet": "Has the national taste changed? Do we prefer, instead of strong ales, to drink lighter beer, such as lager, and are we so unpatriotic as to select German brews when English may be had? Or have the brewers of the United Kingdom met the foreign...",
+                "source": "The New York Times",
+                "subsection_name": null,
+                "type_of_material": "Article",
+                "web_url": "http://query.nytimes.com/gst/abstract.html?res=9406EED91030E333A2575BC1A9649D94699ED7CF",
+                "word_count": 1493
+            },
+            {
+                "_id": "4fc02d7545c1498b0d1a73bd",
+                "abstract": "Emmet Will's Letter to Editor, Appealing for Purity",
+                "blog": [],
+                "byline": {
+                    "original": "EMMET WELLS",
+                    "person": [
+                        {
+                            "firstname": "Emmet",
+                            "lastname": "WELLS",
+                            "organization": "",
+                            "rank": 1,
+                            "role": "reported"
+                        }
+                    ]
+                },
+                "document_type": "article",
+                "headline": {
+                    "main": "AN APPEAL FOR PURE BEER."
+                },
+                "keywords": [
+                    {
+                        "name": "subject",
+                        "value": "BEER"
+                    }
+                ],
+                "lead_paragraph": "To the Editor of The New York Times: Even out of a pig's ear it may be possible to make something closely resembling a silk purse. We have read of the ingenious Westerner who compounded \"commercial oysters\" out of corn starch, salt, and gelatine. You may incubate eggs without the aid of the maternal Biddy, although, if she goes on strike, you cannot produce the genuine, original article.",
+                "multimedia": [],
+                "news_desk": null,
+                "print_page": "19",
+                "pub_date": "1900-12-23T00:00:00Z",
+                "section_name": null,
+                "slideshow_credits": null,
+                "snippet": "To the Editor of The New York Times: Even out of a pig's ear it may be possible to make something closely resembling a silk purse. We have read of the ingenious Westerner who compounded \"commercial oysters\" out of corn starch, salt, and gelatine. You...",
+                "source": "The New York Times",
+                "subsection_name": null,
+                "type_of_material": "Letter",
+                "web_url": "http://query.nytimes.com/gst/abstract.html?res=980CE0D9133EE333A25750C2A9649D946197D6CF",
+                "word_count": 972
+            },
+            {
+                "_id": "4fc0059f45c1498b0d0ed407",
+                "abstract": "Adulteration; H. S. Hershberg's Letter to TIMES",
+                "blog": [],
+                "byline": {
+                    "original": "H.S. HERSHBERG.A CITIZEN",
+                    "person": [
+                        {
+                            "firstname": "H.",
+                            "lastname": "HERSHBERG",
+                            "middlename": "S.",
+                            "organization": "",
+                            "rank": 1,
+                            "role": "reported"
+                        }
+                    ]
+                },
+                "document_type": "article",
+                "headline": {
+                    "main": "ADULTERATED LAGER BEER.; THE BRIDGE TOLLS."
+                },
+                "keywords": [
+                    {
+                        "name": "subject",
+                        "value": "BEER"
+                    }
+                ],
+                "lead_paragraph": null,
+                "multimedia": [],
+                "news_desk": null,
+                "print_page": "3",
+                "pub_date": "1885-06-18T00:00:00Z",
+                "section_name": null,
+                "slideshow_credits": null,
+                "snippet": "Adulteration; H. S. Hershberg's Letter to TIMES",
+                "source": "The New York Times",
+                "subsection_name": null,
+                "type_of_material": "Article",
+                "web_url": "http://query.nytimes.com/gst/abstract.html?res=9B00E1DC1439E533A2575BC1A9609C94649FD7CF",
+                "word_count": 892
+            }
+        ],
+        "meta": {
+            "hits": 8020,
+            "offset": 0,
+            "time": 358
+        }
+    },
+    "status": "OK"
+}
