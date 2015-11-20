@@ -92,13 +92,12 @@ For Vimmers...
 
 * Getting Started - Tools Setup
 
-For Atom...
-
-- [[https://atom.io/packages/go-plus][Go Plus]]
+- For Atom: [[https://atom.io/packages/go-plus][Go Plus]]
+- For Sublime Text: [[https://github.com/DisposaBoy/GoSublime][GoSublime]]
 
 * Getting Started - Tools Setup
 
-For Emacs/Sublime Text/Nano/whatever...
+For Emacs/Nano/whatever...
 
 -  ¯\_(ツ)_/¯
 
