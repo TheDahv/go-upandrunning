@@ -50,7 +50,6 @@ func main() {
 
 // A little helper to run our NYT examples, parse output, and write to Stdout
 func runNYTExample(args []string) {
-
 	// All the NYT examples have basically the same signature. So we lifted the
 	// signature into a type called "Runnable", and declare it as a variable. Go
 	// functions are first-class values, and can be assigned and passed around.
@@ -65,7 +64,13 @@ func runNYTExample(args []string) {
 		runner = nyt.RunParallel
 	}
 
-	results, err := runner(args[1:])
+	fetcher, err := nyt.NewNetworkFetcher()
+	if err != nil {
+		fmt.Printf("Error setting up network fetcher: %s\n", err)
+		return
+	}
+
+	results, err := runner(fetcher, args[1:])
 
 	if err != nil {
 		fmt.Println(err)

@@ -17,9 +17,9 @@ import (
 )
 
 // RunSingle fetches articles for a single search term from the NYT API.
-func RunSingle(searchTerms []string) (io.Reader, error) {
+func RunSingle(fetcher ArticlesFetcher, searchTerms []string) (io.Reader, error) {
 	searchTerm := searchTerms[0]
-	articles, err := findArticles(searchTerm)
+	articles, err := findArticles(fetcher, searchTerm)
 
 	if err != nil {
 		fmt.Printf("Error finding articles: %s\n", err.Error())

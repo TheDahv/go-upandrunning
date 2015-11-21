@@ -14,14 +14,14 @@ import (
 )
 
 // RunSerial fetches articles for multiple search terms, one after the other.
-func RunSerial(searchTerms []string) (io.Reader, error) {
+func RunSerial(fetcher ArticlesFetcher, searchTerms []string) (io.Reader, error) {
 	// Declaring variables this ways creates the 0-value of a type. The 0-value OMIT
 	// of a slice is a nil pointer though, so we either need to initialize it OMIT
 	// with `make`, or we can rely on `append` below OMIT
 	var articles []Article
 
 	for _, t := range searchTerms {
-		a, err := findArticles(t)
+		a, err := findArticles(fetcher, t)
 		// Let's skip over individual errors for now and focus on the program OMIT
 		if err != nil {
 			fmt.Printf("Error searching for '%s': %s\n", t, err.Error())

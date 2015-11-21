@@ -68,15 +68,38 @@ func (a Article) String() string {
 }
 
 // Runnable is an example function that has a common signature
-type Runnable func([]string) (io.Reader, error)
+type Runnable func(ArticlesFetcher, []string) (io.Reader, error)
 
-func findArticles(searchTerm string) ([]Article, error) {
+// ArticlesFetcher describes the behavior of something that can get
+// articles from a resource.
+type ArticlesFetcher interface {
+	// Fetch returns the JSON payload for articles data wrapped in an io.Reader.
+	Fetch(string) (io.Reader, error)
+}
+
+// NetworkFetcher implements the ArticlesFetcher interface by issuing HTTP
+// requests against the NYT API for a given search term.
+type NetworkFetcher struct {
+	Key string
+}
+
+// NewNetworkFetcher returns a fetcher with the initialized API key. If none can
+// be found from the environment, it returns an error.
+func NewNetworkFetcher() (NetworkFetcher, error) {
+	var nf NetworkFetcher
 	if key == "" {
-		return nil, errors.New("API key not available")
+		return nf, errors.New("no API key found")
 	}
 
+	nf.Key = key
+	return nf, nil
+}
+
+// Fetch creates the HTTP request for the search term and returns an io.Reader
+// for the raw JSON response.
+func (nf NetworkFetcher) Fetch(searchTerm string) (io.Reader, error) {
 	resp, err := http.Get(fmt.Sprintf("%s.%s?q=%s&fq=%s&api-key=%s",
-		urlBase, respFmt, searchTerm, docType, key))
+		urlBase, respFmt, searchTerm, docType, nf.Key))
 
 	// Introducing "defer". This will run when the current scope returns 		OMIT
 	// Defers can call `resp.Close()` directly, but we can also register 		OMIT
@@ -101,20 +124,30 @@ func findArticles(searchTerm string) ([]Article, error) {
 	// brevity																													 OMIT
 	// NOTE: This allocates the entire body into a buffer. You might not OMIT
 	// need to do that if handling it as an io.Reader suffices.					 OMIT
-	body, err := ioutil.ReadAll(resp.Body)
+	return resp.Body, nil
+}
+
+func findArticles(fetcher ArticlesFetcher, searchTerm string) ([]Article, error) {
+	data, err := fetcher.Fetch(searchTerm)
 	if err != nil {
 		return nil, err
 	}
 
 	// Send the raw bytes to `parseResponse` and return the []Articles OMIT
-	return parseResponse(body)
+	return parseResponse(data)
 }
 
 // parseResponse marshals raw JSON bytes into a slice of Article structs.
 // If there is a parsing error, that is returned with an empty articles list.
-func parseResponse(data []byte) ([]Article, error) {
+func parseResponse(data io.Reader) ([]Article, error) {
 	var response ArticleResponse
-	err := json.Unmarshal(data, &response)
+
+	b, err := ioutil.ReadAll(data)
+	if err != nil {
+		return nil, err
+	}
+
+	err = json.Unmarshal(b, &response)
 
 	if err != nil {
 		return []Article{}, err

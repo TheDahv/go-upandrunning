@@ -27,7 +27,7 @@ import (
 
 // RunParallel fetches articles for multiple search terms in parallel and merges
 // the results into a single payload.
-func RunParallel(searchTerms []string) (io.Reader, error) {
+func RunParallel(fetcher ArticlesFetcher, searchTerms []string) (io.Reader, error) {
 	// setup start OMIT
 	var (
 		articles []Article
@@ -59,7 +59,7 @@ func RunParallel(searchTerms []string) (io.Reader, error) {
 	// NOTE: If we wanted to limit how fast we request our upstream source, we OMIT
 	// could use a "worker pattern": OMIT
 	for _, t := range searchTerms {
-		go queryHelper(t, &wg, results, errors)
+		go queryHelper(fetcher, t, &wg, results, errors)
 	}
 
 	// We can run anonymous functions in their own goroutines as well OMIT
@@ -105,10 +105,10 @@ Loop:
 }
 
 // queryHelper wraps our findArticles call with the WaitGroup synchronization
-func queryHelper(term string, wg *sync.WaitGroup,
+func queryHelper(fetcher ArticlesFetcher, term string, wg *sync.WaitGroup,
 	results chan []Article, errors chan error) {
 
-	articles, err := findArticles(term)
+	articles, err := findArticles(fetcher, term)
 	if err != nil {
 		errors <- err
 	} else {
