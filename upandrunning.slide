@@ -171,7 +171,7 @@ Let's build a NY Times API client:
 
 * Network Calls in Go
 
-.code examples/nyt/common.go /^func findArticles/,/^}
+.code examples/nyt/common.go /^func \(nf NetworkFetcher\) Fetch/,/^}
 
 * And Dealing with JSON and Types
 

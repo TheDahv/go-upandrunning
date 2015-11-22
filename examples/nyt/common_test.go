@@ -1,7 +1,6 @@
 package nyt
 
 import (
-	"io/ioutil"
 	"os"
 	"testing"
 )
@@ -14,12 +13,7 @@ func TestParseResponse(t *testing.T) {
 	}
 	defer f.Close()
 
-	data, err := ioutil.ReadAll(f)
-	if err != nil {
-		t.Error(err)
-		t.FailNow()
-	}
-	articles, err := parseResponse(data)
+	articles, err := parseResponse(f)
 
 	if err != nil {
 		t.Error(err)

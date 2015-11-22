@@ -1,6 +1,7 @@
 package nyt
 
 import (
+	"bytes"
 	"encoding/json"
 	"errors"
 	"fmt"
@@ -101,12 +102,12 @@ func (nf NetworkFetcher) Fetch(searchTerm string) (io.Reader, error) {
 	resp, err := http.Get(fmt.Sprintf("%s.%s?q=%s&fq=%s&api-key=%s",
 		urlBase, respFmt, searchTerm, docType, nf.Key))
 
-	// Introducing "defer". This will run when the current scope returns 		OMIT
-	// Defers can call `resp.Close()` directly, but we can also register 		OMIT
-	// anonymous functions. We normally wouldn't do it this way, but we're 	OMIT
-	// bailing early on error, so we must register the defer now. 					OMIT
-	// 																																			OMIT
-	// NOTE: Failing to close the response Body is a leak. Don't do it. 		OMIT
+	// Introducing "defer". This will run when the current scope returns 	 OMIT
+	// Defers can call `resp.Close()` directly, but we can also register 	 OMIT
+	// anonymous functions. We normally wouldn't do it this way, but we're OMIT
+	// bailing early on error, so we must register the defer now. 				 OMIT
+	// 																																		 OMIT
+	// NOTE: Failing to close the response Body is a leak. Don't do it. 	 OMIT
 	defer func() {
 		if resp != nil {
 			resp.Body.Close()
@@ -125,6 +126,47 @@ func (nf NetworkFetcher) Fetch(searchTerm string) (io.Reader, error) {
 	// NOTE: This allocates the entire body into a buffer. You might not OMIT
 	// need to do that if handling it as an io.Reader suffices.					 OMIT
 	return resp.Body, nil
+}
+
+// FileFetcher implements the ArticlesFetcher interface by reutrning data from a
+// file on disk.
+type FileFetcher struct {
+	// data is an internally-managed byte array containing the data in the file
+	data []byte
+}
+
+// NewFileFetcher attempts to wrap a FileFetcher around a file resource at path.
+// It returns an error if there is a problem opening that file.
+func NewFileFetcher(path string) (FileFetcher, error) {
+	var ff FileFetcher
+
+	f, err := os.Open(path)
+	if err != nil {
+		return ff, err
+	}
+	defer f.Close()
+
+	data, err := ioutil.ReadAll(f)
+	if err != nil {
+		return ff, err
+	}
+
+	ff.data = data
+
+	return ff, nil
+}
+
+// Fetch loads articles from the JSON data that was extracted from
+// a file on disk.
+func (ff FileFetcher) Fetch(searchTerm string) (io.Reader, error) {
+	if len(ff.data) == 0 {
+		return nil, errors.New("FileFetcher file data not available")
+	}
+
+	d := make([]byte, len(ff.data))
+	copy(d, ff.data)
+
+	return bytes.NewReader(d), nil
 }
 
 func findArticles(fetcher ArticlesFetcher, searchTerm string) ([]Article, error) {
