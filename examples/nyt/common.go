@@ -63,7 +63,7 @@ type Article struct {
 }
 
 func (a Article) String() string {
-	return fmt.Sprintf("(%v) '%s' - %s\n",
+	return fmt.Sprintf("(%v) '%s' - %s",
 		a.Date.Format("02 Jan 2006"), a.Headline.Main, a.URL)
 }
 
