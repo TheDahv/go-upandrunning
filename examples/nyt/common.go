@@ -2,6 +2,7 @@ package nyt
 
 import (
 	"encoding/json"
+	"errors"
 	"fmt"
 	"io"
 	"io/ioutil"
@@ -70,6 +71,10 @@ func (a Article) String() string {
 type Runnable func([]string) (io.Reader, error)
 
 func findArticles(searchTerm string) ([]Article, error) {
+	if key == "" {
+		return nil, errors.New("API key not available")
+	}
+
 	resp, err := http.Get(fmt.Sprintf("%s.%s?q=%s&fq=%s&api-key=%s",
 		urlBase, respFmt, searchTerm, docType, key))
 
