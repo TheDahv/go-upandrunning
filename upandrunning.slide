@@ -21,6 +21,7 @@ _contributors_from_the_open_source_community._
 - Composition via structs and interfaces
 - First-class concurrency primitives (goroutines and channels)
 - Functions as values
+- Leverage _ALL_THE_CORES!_
 
 * Go Environment Features
 
@@ -30,6 +31,26 @@ _contributors_from_the_open_source_community._
 - Static binaries and awesome deployments (includes Go runtime)
 - Cross-compilation to Darwin, Linux, and Windows (ARMx, BSD experimental)
 - Tools for everything: (`go`run`, `go`test`, `goimports`, `golang.org/x/tools/present`)
+- C libraries are within easy reach via Cgo and dynamic/static compilation
+
+* Go "Intangibles"
+
+_The_"Outside_the_computer"_advantages_
+
+- Very approachable learning curve
+- Documentation as a "first class citizen" (local `godoc` example)
+- Active and supportive community (Gophers Slack, [[https://forum.golangbridge.org/][Go Forum]], [[https://www.reddit.com/r/golang][/r/golang]])
+- Corporate & OSS support
+- Lots of documentation and learning resources ([[https://blog.golang.org/][Go Blog]], [[https://github.com/golang/go][Go Source]])
+- Hirable - as of 1 Dec, 22 (436 global) Seattle Go jobs on StackOverflow Careers, 2 (113 global) on AngelList
+
+* Some "Gotchas"
+
+- Vendor dependency versioning story is still evolving
+- "Mark and sweep" Garbage collection implementation can impact realtime applications (Go 1.5 introduces parallelized GC)
+- Channels are approachable, but also easy to get wrong
+- `interface{}` is a double-edged sword
+- From personal experience, Go community isn't too interested in solving front-end dev story...yet
 
 * Why Go?
 
