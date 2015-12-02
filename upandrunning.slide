@@ -1,6 +1,6 @@
 Go: Up and Running
 Moz Lunch and Learn
-25 Nov 2015
+2 Dec 2015
 Tags: intro
 
 David Pierce
@@ -191,3 +191,10 @@ Let's build a NY Times API client:
 * Let's Search Multiple Terms (Parallel) continued...
 
 .code examples/nyt/parallel.go /consume start/,/consume end
+
+* Where to Go from here?
+
+- How do interfaces and structs help us organize our code?
+- How do we test this program?
+- How do we profile and optimize performance?
+- How do we make this more sharable and "go gettable"?
