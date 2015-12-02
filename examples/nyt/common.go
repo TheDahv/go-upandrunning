@@ -121,11 +121,17 @@ func (nf NetworkFetcher) Fetch(searchTerm string) (io.Reader, error) {
 		return nil, err
 	}
 
-	// We're just going to choose to discard the response body ready for OMIT
-	// brevity																													 OMIT
+	// We're just going to choose to discard the response err ready for  OMIT
+	// brevity. There are other elegant options like io.Pipe, as well    OMIT
 	// NOTE: This allocates the entire body into a buffer. You might not OMIT
 	// need to do that if handling it as an io.Reader suffices.					 OMIT
-	return resp.Body, nil
+	body, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		return nil, err
+	}
+
+	rdr := bytes.NewReader(body)
+	return rdr, nil
 }
 
 // FileFetcher implements the ArticlesFetcher interface by reutrning data from a
