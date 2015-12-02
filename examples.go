@@ -72,6 +72,11 @@ func runNYTExample(args []string) {
 		return
 	}
 
+	if results == nil {
+		fmt.Println("No results for that query")
+		return
+	}
+
 	// Scanner is a great way to consume an io.Reader with buffered reads. Note,
 	// it splits a reader by newlines by default, but you can create a scanner
 	// that splits on whatever you want.
