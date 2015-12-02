@@ -9,6 +9,14 @@ david.pierce@moz.com
 http://www.thedahv.com
 @TheDahv
 
+* Housekeeping
+
+- Consider me a facilitator, not a presenter
+- Questions, challenges, rebuttals, and shouting "show me the code!" is all encouraged
+- Questions? Corrections? Requests? Please file a bug in the [[https://github.com/TheDahv/go-upandrunning/issues][presentation repo]]
+- We have 60 minutes, so let's keep each other accountable to moving on and using Issues as a parking lot
+- Let's get a sense for the collective Go experience in the room...
+
 * What is Go?
 
 _Go_is_an_open_source_project_developed_by_a_team_at_Google_and_many_
